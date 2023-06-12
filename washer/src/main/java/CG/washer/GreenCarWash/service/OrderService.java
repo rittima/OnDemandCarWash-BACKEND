@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import CG.washer.GreenCarWash.exceptionHandlers.API_requestException;
+import CG.washer.GreenCarWash.exceptionHandlers.APIrequestException;
 import CG.washer.GreenCarWash.model.OrderDetails;
 import CG.washer.GreenCarWash.model.WashPacks;
 import CG.washer.GreenCarWash.wrapperclass.OrderReceipt;
@@ -30,6 +30,10 @@ public class OrderService {
      String url1="http://Admin-Service/admins";
 
 
+     public List<OrderDetails> getUnassignedOrders(){
+         OrderDetails[] unassignedList = restTemplate.getForObject(url+"/findUnassigned",OrderDetails[].class);
+         return Arrays.asList(unassignedList );
+     }
 
      //To see all the WashPacks
      public List<WashPacks> getAllWP(){
@@ -69,9 +73,10 @@ public class OrderService {
              return new OrderReceipt(id,od.getUseremailid(),od.getWasherName(),wp.getName(),wp.getDescription(),wp.getCost());
          }
          else{
-             throw new API_requestException("Your order with ID -> "+id+" is still pending");
+             throw new APIrequestException("Your order with ID -> "+id+" is still pending");
          }
-     }
+     
+	}
  
 
 }

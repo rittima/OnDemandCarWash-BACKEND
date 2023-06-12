@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class WasherProfile {
     @Id
     private  String email;
-    private String Password;
+    private String password1;
     private String fullName;
     private String status;
     private String phoneNunmber;
@@ -20,7 +20,7 @@ public class WasherProfile {
     public WasherProfile(String email, String password, String fullName, String status, String phoneNunmber) {
         super();
         this.email = email;
-        Password = password;
+        password1 = password;
         this.fullName = fullName;
         this.status = status;
         this.phoneNunmber = phoneNunmber;
@@ -32,10 +32,10 @@ public class WasherProfile {
         this.email = email;
     }
     public String getPassword() {
-        return Password;
+        return password1;
     }
     public void setPassword(String password) {
-        Password = password;
+    	password1 = password;
     }
     public String getFullName() {
         return fullName;
@@ -57,7 +57,7 @@ public class WasherProfile {
     }
     @Override
     public String toString() {
-        return "WasherProfile [email=" + email + ", Password=" + Password + ", fullName=" + fullName + ", status="
+        return "WasherProfile [email=" + email + ", Password=" + password1 + ", fullName=" + fullName + ", status="
                 + status + ", phoneNunmber=" + phoneNunmber + "]";
     }
 }

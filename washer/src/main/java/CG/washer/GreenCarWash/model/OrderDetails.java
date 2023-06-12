@@ -1,15 +1,19 @@
 package CG.washer.GreenCarWash.model;
 
+
+import javax.annotation.processing.Generated;
+import javax.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotEmpty;
+@Document(collection="Details")
 
-@Document(collection="orders")
+
+
 public class OrderDetails {
 
     @Id
-    int orderId;
+    Long orderId;
     @NotEmpty(message = "Email Can't be empty")
     String useremailid;
     @NotEmpty(message = "Washer Name Can't be empty")
@@ -30,8 +34,8 @@ public class OrderDetails {
     }
 
     //Constructor
-    public OrderDetails(int orderId, String useremailid, String washerName, String washpack, long phoneNo, String areapincode, String status, Car cars) {
-    	this.orderId = orderId;
+    public OrderDetails(Long orderId, String useremailid, String washerName, String washpack, long phoneNo, String areapincode, String status, Car cars) {
+        this.orderId = orderId;
         this.useremailid = useremailid;
         this.washerName = washerName;
         this.washpack = washpack;
@@ -54,10 +58,10 @@ public class OrderDetails {
     public void setAreapincode(String areapincode) {
         this.areapincode = areapincode;
     }
-    public int getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
-    public void setOrderId(int orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
     public String getWasherName() {
@@ -69,6 +73,7 @@ public class OrderDetails {
     public String getWashpack() {
         return washpack;
     }
+    
     public void setWashpack(String washpack) {
         this.washpack = washpack;
     }

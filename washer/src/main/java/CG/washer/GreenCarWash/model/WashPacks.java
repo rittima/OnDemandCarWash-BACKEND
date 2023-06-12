@@ -1,15 +1,22 @@
+
 package CG.washer.GreenCarWash.model;
+
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="WashPacks")
+
+@Document(collection="Packs")
 public class WashPacks {
 
     @Id
-    int id;
+    String id;
+    @NotEmpty(message = "Name Can't be empty")
     String name;
+    @NotEmpty(message = "price Can't be empty")
     int cost;
+    @NotEmpty(message = "Email Can't be empty")
     String description;
 
     //Default
@@ -18,10 +25,12 @@ public class WashPacks {
     }
 
     //Constructor
-	/*
-	 * public WashPacks(int id, String name, int cost, String description) { this.id
-	 * = id; this.name = name; this.cost = cost; this.description = description; }
-	 */
+    public WashPacks(String id, String name, int cost, String description) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.description = description;
+    }
 
     //Getters and Setters
     public int getCost() {
@@ -36,10 +45,10 @@ public class WashPacks {
     public void setDescription(String description) {
         this.description = description;
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getName() {

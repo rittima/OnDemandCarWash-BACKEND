@@ -8,16 +8,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
-
 @SpringBootApplication
 public class WasherApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(WasherApplication.class, args);
+	}
 	@Bean
 	@LoadBalanced
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(WasherApplication.class, args);
 	}
 }
