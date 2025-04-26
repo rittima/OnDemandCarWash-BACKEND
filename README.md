@@ -1,4 +1,5 @@
 Rittima Microservices Project
+
 This project is a Spring Boot Microservices Architecture featuring multiple services communicating with each other, built with Java, Spring Cloud, Spring Security, MongoDB, and integrated payment via Razorpay.
 🚀 Technologies Used
 Java 8+
@@ -55,10 +56,4 @@ Razorpay account (for payment integration)
 ✨ Author
 Rittima
 
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-Would you also like me to include a section like "API Endpoints" or "Sample Request-Response" if you want to make it even more professional? 🚀
-Would look super nice if someone else looks at your GitHub repo! 🎯
-
-Want me to add that too? 👀✨
